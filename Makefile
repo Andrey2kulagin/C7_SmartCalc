@@ -3,7 +3,7 @@ CFLAG = -Wall -Wextra -Werror
 APP = build/s21_calc.app
 BACKEND_FILES = source/c_libs.c;
 BACKEND_FILES_O = c_libs.o
-LIBS := -lcheck -lm
+LIBS := -lcheck $(shell pkg-config --cflags --libs check)
 TESTS := tests/*.c tests/*.h
 
 all: install s21_calc.a tests
