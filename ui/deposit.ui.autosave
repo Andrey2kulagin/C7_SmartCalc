@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>deposit</class>
+ <widget class="QDialog" name="deposit">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>446</width>
+    <height>383</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="1" column="0">
+    <layout class="QGridLayout" name="gridLayout_3">
+     <item row="0" column="0">
+      <widget class="QCheckBox" name="is_capitalization">
+       <property name="text">
+        <string>капитализация процентов</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <layout class="QFormLayout" name="formLayout_3">
+       <item row="0" column="0">
+        <widget class="QLabel" name="replanishment_name">
+         <property name="text">
+          <string>Пополнение</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QComboBox" name="replanishment">
+         <item>
+          <property name="text">
+           <string>не предусмотрено</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>1 раз в месяц</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>1 раз в год</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="replanishment_sum">
+         <property name="text">
+          <string>Сумма</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="partial_repleneshment"/>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="partial_withdrawal_name">
+         <property name="text">
+          <string>Частичное снятие</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QComboBox" name="partial_withdrawal">
+         <item>
+          <property name="text">
+           <string>не предусмотрено</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>раз в месяц</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>раз в пол года</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>раз в год</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>Сумма</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="partial_withdrawal_sum"/>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item row="2" column="0">
+    <widget class="QPushButton" name="calculate">
+     <property name="text">
+      <string>Рассчитать</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <layout class="QFormLayout" name="formLayout_4">
+     <item row="0" column="0">
+      <widget class="QLabel" name="accured_interest_name">
+       <property name="text">
+        <string>Начисленные проценты</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="tax_sum_name">
+       <property name="text">
+        <string>Сумма налога</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLabel" name="accured_interest">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLabel" name="tax_sum">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="amount_of_account_name">
+       <property name="text">
+        <string>Сумма на счете</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLabel" name="anount_of_account">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="0" column="0">
+    <layout class="QFormLayout" name="formLayout_2">
+     <item row="0" column="0">
+      <widget class="QLabel" name="deposit_sum_name">
+       <property name="text">
+        <string>Сумма вклада</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="deposit_initial_sum"/>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="placement_period_name">
+       <property name="text">
+        <string>Срок размещения, мес.</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="placement_period"/>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="income_rate_name">
+       <property name="text">
+        <string>Процент, %/год.</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="income_rate"/>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="tax_name">
+       <property name="text">
+        <string>Налог, %/год.</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="tax"/>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="frequency_of_payments_name">
+       <property name="text">
+        <string>Периодичность выплат</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QComboBox" name="frequency_of_payments">
+       <item>
+        <property name="text">
+         <string comment="1">1 раз в месяц</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string comment="2">1 раз в 6 месяцев</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string comment="3">1 раз в год</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string comment="4">В конце срока</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
