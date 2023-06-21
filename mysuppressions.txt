@@ -1,0 +1,8 @@
+{
+   Check suppressions
+   Memcheck:Cond
+   obj:/usr/lib/libcheck*
+   fun:alloc_fail
+   fun:_unused_check_abort
+   fun:check_leap_second_fixup
+}

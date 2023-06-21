@@ -7,6 +7,7 @@ START_TEST(s21_validator_2) {
   int result = s21_numeric_expression_validator(input_string);
   ck_assert_int_eq(result, 1);
 }
+
 START_TEST(s21_validator_3) {
   char *input_string = "1+2)";
 
