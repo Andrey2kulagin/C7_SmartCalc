@@ -10,8 +10,8 @@ START_TEST(s21_credit_1) {
   struct credit_output output;
   s21_credit_calc(input, &output);
   ck_assert_str_eq(output.month_payment, "730.54");
-  ck_assert_str_eq(output.over_payment, "13880");
-  ck_assert_str_eq(output.total_payment, "25880");
+  ck_assert_str_eq(output.over_payment, "1880.30");
+  ck_assert_str_eq(output.total_payment, "13880.30");
 }
 
 START_TEST(s21_credit_2) {
@@ -24,8 +24,8 @@ START_TEST(s21_credit_2) {
   struct credit_output output;
   s21_credit_calc(input, &output);
   ck_assert_str_eq(output.month_payment, "2702.78");
-  ck_assert_str_eq(output.over_payment, "324333");
-  ck_assert_str_eq(output.total_payment, "474333");
+  ck_assert_str_eq(output.over_payment, "174333.48");
+  ck_assert_str_eq(output.total_payment, "324333.48");
 }
 
 START_TEST(s21_credit_3) {
@@ -41,8 +41,8 @@ START_TEST(s21_credit_3) {
                    "   1120.00   |       120.00  |    1000.00");
   ck_assert_str_eq(output.diff_payments[11],
                    "   1010.00   |        10.00  |    1000.00");
-  ck_assert_str_eq(output.over_payment, "780");
-  ck_assert_str_eq(output.total_payment, "12780");
+  ck_assert_str_eq(output.over_payment, "780.00");
+  ck_assert_str_eq(output.total_payment, "12780.00");
 }
 
 START_TEST(s21_credit_4) {
@@ -50,16 +50,30 @@ START_TEST(s21_credit_4) {
   struct credit_input input;
   input.credit_in_sum = 120000000;
   input.interest_rate = 18.9358;  // процентная ставка
-  input.loan_term = 719;          // срок
+  input.loan_term = 599;          // срок
   input.loan_type = 2;  //тип платежа (1 - аннуитентный, 2 - дифф.)
   struct credit_output output;
   s21_credit_calc(input, &output);
   ck_assert_str_eq(output.diff_payments[0],
-                   "2060478.47   |   1893580.00  |  166898.47");
-  ck_assert_str_eq(output.diff_payments[718],
-                   " 169532.11   |      2633.65  |  166898.47");
-  ck_assert_str_eq(output.over_payment, "681688832");
-  ck_assert_str_eq(output.total_payment, "801688832");
+                   "2093913.89   |   1893580.00  |  200333.89");
+  ck_assert_str_eq(output.diff_payments[598],
+                   " 203495.12   |      3161.23  |  200333.89");
+  ck_assert_str_eq(output.over_payment, "568073984.00");
+  ck_assert_str_eq(output.total_payment, "688073984.00");
+}
+
+START_TEST(s21_credit_5) {
+  //аннуитентный
+  struct credit_input input;
+  input.credit_in_sum = 100;
+  input.interest_rate = 1;  // процентная ставка
+  input.loan_term = 1;      // срок
+  input.loan_type = 1;  //тип платежа (1 - аннуитентный, 2 - дифф.)
+  struct credit_output output;
+  s21_credit_calc(input, &output);
+  ck_assert_str_eq(output.month_payment, "100.08");
+  ck_assert_str_eq(output.over_payment, "0.08");
+  ck_assert_str_eq(output.total_payment, "100.08");
 }
 
 Suite *suite_s21_credit(void) {
@@ -71,6 +85,7 @@ Suite *suite_s21_credit(void) {
   tcase_add_test(tc22, s21_credit_2);
   tcase_add_test(tc22, s21_credit_3);
   tcase_add_test(tc22, s21_credit_4);
+  tcase_add_test(tc22, s21_credit_5);
   suite_add_tcase(s22, tc22);
   return s22;
 }

@@ -94,8 +94,6 @@ START_TEST(s21_element_parsing_1) {
   ck_assert_str_eq("2", output);
 }
 
-
-
 START_TEST(s21_element_parsing_3) {
   char stack[260] = "\0";
   char *input_string = "(son(23)+3)";
@@ -105,7 +103,6 @@ START_TEST(s21_element_parsing_3) {
   int res = element_parsing(input_string, &i, input_length, output, stack);
   ck_assert_int_eq(res, 0);
 }
-
 
 START_TEST(s21_element_parsing_5) {
   char stack[260] = "\0";

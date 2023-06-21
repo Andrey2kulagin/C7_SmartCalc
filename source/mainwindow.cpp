@@ -65,53 +65,51 @@ void MainWindow::on_equally_button_clicked() {
 }
 
 void MainWindow::on_minus_button_clicked() {
-  ui->textEdit->insertPlainText(" - ");
+  ui->textEdit->insertPlainText("-");
 }
 
 void MainWindow::on_clear_button_clicked() { ui->textEdit->setPlainText(""); }
 
 void MainWindow::on_mod_button_clicked() {
-  ui->textEdit->insertPlainText(" mod ");
+  ui->textEdit->insertPlainText("mod");
 }
 
-void MainWindow::on_pow_button_clicked() {
-  ui->textEdit->insertPlainText(" ^ ");
-}
+void MainWindow::on_pow_button_clicked() { ui->textEdit->insertPlainText("^"); }
 
 void MainWindow::on_sqrt_button_clicked() {
-  ui->textEdit->insertPlainText(" sqrt(");
+  ui->textEdit->insertPlainText("sqrt(");
 }
 
 void MainWindow::on_ln_button_clicked() {
-  ui->textEdit->insertPlainText(" ln(");
+  ui->textEdit->insertPlainText("ln(");
 }
 
 void MainWindow::on_log_button_clicked() {
-  ui->textEdit->insertPlainText(" log(");
+  ui->textEdit->insertPlainText("log(");
 }
 
 void MainWindow::on_acos_button_clicked() {
-  ui->textEdit->insertPlainText(" acos(");
+  ui->textEdit->insertPlainText("acos(");
 }
 
 void MainWindow::on_asin_button_clicked() {
-  ui->textEdit->insertPlainText(" asin(");
+  ui->textEdit->insertPlainText("asin(");
 }
 
 void MainWindow::on_atan_button_clicked() {
-  ui->textEdit->insertPlainText(" atan(");
+  ui->textEdit->insertPlainText("atan(");
 }
 
 void MainWindow::on_sin_button_clicked() {
-  ui->textEdit->insertPlainText(" sin(");
+  ui->textEdit->insertPlainText("sin(");
 }
 
 void MainWindow::on_cos_button_clicked() {
-  ui->textEdit->insertPlainText(" cos(");
+  ui->textEdit->insertPlainText("cos(");
 }
 
 void MainWindow::on_tan_button_clicked() {
-  ui->textEdit->insertPlainText(" tan(");
+  ui->textEdit->insertPlainText("tan(");
 }
 
 void MainWindow::on_seven_button_clicked() {
@@ -167,16 +165,14 @@ void MainWindow::on_backspace_button_clicked() {
   ui->textEdit->insertPlainText(text);
 }
 
-void MainWindow::on_div_button_clicked() {
-  ui->textEdit->insertPlainText(" ÷ ");
-}
+void MainWindow::on_div_button_clicked() { ui->textEdit->insertPlainText("/"); }
 
 void MainWindow::on_mult_button_clicked() {
-  ui->textEdit->insertPlainText(" * ");
+  ui->textEdit->insertPlainText("*");
 }
 
 void MainWindow::on_plus_button_clicked() {
-  ui->textEdit->insertPlainText(" + ");
+  ui->textEdit->insertPlainText("+");
 }
 
 void MainWindow::on_pushButton_2_clicked() {

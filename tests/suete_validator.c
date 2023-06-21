@@ -1,13 +1,11 @@
 #include "test_main.h"
 
-
 START_TEST(s21_validator_2) {
   char *input_string = "(1+2)";
 
   int result = s21_numeric_expression_validator(input_string);
   ck_assert_int_eq(result, 1);
 }
-
 START_TEST(s21_validator_3) {
   char *input_string = "1+2)";
 
@@ -46,7 +44,6 @@ START_TEST(s21_validator_9) {
   int result = s21_numeric_expression_validator(input_string);
   ck_assert_int_eq(result, 1);
 }
-
 
 Suite *suite_s21_validator(void) {
   Suite *s22;

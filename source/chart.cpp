@@ -66,7 +66,7 @@ void Chart::on_recalc_clicked() {
 
   bool step_text_is_double = false;
   double step_number = step_text.toDouble(&step_text_is_double);
-  if (step_text_is_double == false) {
+  if (step_text_is_double == false || step_number <= 0) {
     ui->step->setStyleSheet("background-color: red");
     all_is_int = false;
   } else {

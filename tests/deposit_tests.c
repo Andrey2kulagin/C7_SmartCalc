@@ -229,9 +229,9 @@ START_TEST(s21_deposit_12) {
   struct deposit_output output;
   int result_code = s21_deposit_calc(input, &output);
   ck_assert_int_eq(1, result_code);
-  ck_assert_str_eq(output.anount_of_account, "12981");
-  ck_assert_str_eq(output.accured_interest, "981");
-  ck_assert_str_eq(output.tax_sum, "121");
+  ck_assert_str_eq(output.anount_of_account, "12980.53");
+  ck_assert_str_eq(output.accured_interest, "980.53");
+  ck_assert_str_eq(output.tax_sum, "120.61");
 }
 
 START_TEST(s21_deposit_13) {
@@ -251,9 +251,9 @@ START_TEST(s21_deposit_13) {
   struct deposit_output output;
   int result_code = s21_deposit_calc(input, &output);
   ck_assert_int_eq(1, result_code);
-  ck_assert_str_eq(output.anount_of_account, "12969");
-  ck_assert_str_eq(output.accured_interest, "969");
-  ck_assert_str_eq(output.tax_sum, "119");
+  ck_assert_str_eq(output.anount_of_account, "12969.00");
+  ck_assert_str_eq(output.accured_interest, "969.00");
+  ck_assert_str_eq(output.tax_sum, "119.19");
 }
 
 START_TEST(s21_deposit_14) {
@@ -273,9 +273,9 @@ START_TEST(s21_deposit_14) {
   struct deposit_output output;
   int result_code = s21_deposit_calc(input, &output);
   ck_assert_int_eq(1, result_code);
-  ck_assert_str_eq(output.anount_of_account, "12957");
-  ck_assert_str_eq(output.accured_interest, "957");
-  ck_assert_str_eq(output.tax_sum, "118");
+  ck_assert_str_eq(output.anount_of_account, "12956.91");
+  ck_assert_str_eq(output.accured_interest, "956.91");
+  ck_assert_str_eq(output.tax_sum, "117.70");
 }
 
 START_TEST(s21_deposit_15) {
@@ -296,9 +296,9 @@ START_TEST(s21_deposit_15) {
   struct deposit_output output;
   int result_code = s21_deposit_calc(input, &output);
   ck_assert_int_eq(1, result_code);
-  ck_assert_str_eq(output.anount_of_account, "2743");
-  ck_assert_str_eq(output.accured_interest, "743");
-  ck_assert_str_eq(output.tax_sum, "91");
+  ck_assert_str_eq(output.anount_of_account, "2743.38");
+  ck_assert_str_eq(output.accured_interest, "743.38");
+  ck_assert_str_eq(output.tax_sum, "91.44");
 }
 
 START_TEST(s21_deposit_16) {
@@ -321,9 +321,9 @@ START_TEST(s21_deposit_16) {
   struct deposit_output output;
   int result_code = s21_deposit_calc(input, &output);
   ck_assert_int_eq(1, result_code);
-  ck_assert_str_eq(output.anount_of_account, "6872");
-  ck_assert_str_eq(output.accured_interest, "872");
-  ck_assert_str_eq(output.tax_sum, "107");
+  ck_assert_str_eq(output.anount_of_account, "6871.56");
+  ck_assert_str_eq(output.accured_interest, "871.56");
+  ck_assert_str_eq(output.tax_sum, "107.20");
 }
 
 START_TEST(s21_deposit_17) {

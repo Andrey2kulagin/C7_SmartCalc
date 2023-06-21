@@ -32,21 +32,20 @@ void differentiated_credit_handler(struct credit_input input,
     all_percents += cure_percent;
     month_num++;
   }
-  sprintf(output->over_payment, "%.0lf", all_percents);
-  sprintf(output->total_payment, "%.0lf", input.credit_in_sum + all_percents);
+  sprintf(output->over_payment, "%.2lf", all_percents);
+  sprintf(output->total_payment, "%.2lf", input.credit_in_sum + all_percents);
   output->diff_payments_count = output_counter;
 }
 void annuity_credit_handler(struct credit_input input,
                             struct credit_output *output) {
   double percent_per_month = input.interest_rate / 100.0 / 12.0;
-  double k =
-      (percent_per_month * powf(1 + percent_per_month, input.loan_term)) /
-      (powf(1 + percent_per_month, input.loan_term) - 1);
-  double percent_value_for_month = input.credit_in_sum * k;
-  double percent_sum = percent_value_for_month * input.loan_term;
-  sprintf(output->month_payment, "%.2lf", percent_value_for_month);
-  sprintf(output->over_payment, "%.0lf", percent_sum);
-  sprintf(output->total_payment, "%.0lf", percent_sum + input.credit_in_sum);
+  double month_payment = input.credit_in_sum * percent_per_month /
+                         (1 - powf((1 + percent_per_month), -input.loan_term));
+  double percent_sum = month_payment * input.loan_term - input.credit_in_sum;
+  sprintf(output->month_payment, "%.2lf", month_payment);
+  sprintf(output->over_payment, "%.2lf",
+          month_payment * input.loan_term - input.credit_in_sum);
+  sprintf(output->total_payment, "%.2lf", month_payment * input.loan_term);
 }
 
 int s21_deposit_calc(struct deposit_input input,
@@ -73,10 +72,10 @@ int s21_deposit_calc(struct deposit_input input,
 
 void from_deposit_to_output(struct deposit deposit,
                             struct deposit_output *output) {
-  sprintf(output->accured_interest, "%.0lf", deposit.percents_all);
-  sprintf(output->anount_of_account, "%.0lf",
+  sprintf(output->accured_interest, "%.2lf", deposit.percents_all);
+  sprintf(output->anount_of_account, "%.2lf",
           deposit.body + deposit.percents_current);
-  sprintf(output->tax_sum, "%.0lf", deposit.tax);
+  sprintf(output->tax_sum, "%.2lf", deposit.tax);
 }
 int count_monthly_partial_withdrawal(struct deposit_input input,
                                      struct deposit *deposit, int month_num) {
@@ -683,7 +682,6 @@ int s21_numeric_expression_validator(char *input_string) {
   int result = is_brakets_valid(input_string);
   return result;
 }
-
 
 int is_char_in_str(char *input_string_orig, char sign) {
   int i = 0;

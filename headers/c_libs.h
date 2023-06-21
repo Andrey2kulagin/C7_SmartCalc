@@ -50,13 +50,69 @@ struct deposit_output {
 };
 
 //основнык функции
+/**
+ * @brief основная функция калькулятора
+ * 
+ * @param input выражение в инфиксной форме
+ * @param result_str результат
+ * @return int  код результата, 1 - все норм. 0 - ошибка
+ */
 int s21_calculator(char *input, char *result_str);
+/**
+ * @brief валидатор выражений, валидирует только скобки
+ * 
+ * @param input_string 
+ * @return int 
+ */
 int s21_numeric_expression_validator(char *input_string);
+/**
+ * @brief  переводчик в польскую нотацию
+ * 
+ * @param input_string  
+ * @param output 
+ * @return int 
+ */
 int to_polish(char *input_string, char *output);
+/**
+ * @brief получение результата из польской нотации
+ * 
+ * @param polish 
+ * @param output 
+ * @return int 
+ */
 int s21_get_result_from_polish(char *polish, char *output);
+/**
+ * @brief калькуляция с икс
+ * 
+ * @param input 
+ * @param result_str 
+ * @param x_value 
+ * @return int 
+ */
 int s21_calculator_with_x(char *input, char *result_str, char *x_value);
+/**
+ * @brief калькуляция для графика
+ * 
+ * @param input 
+ * @param result_double 
+ * @param x_value 
+ * @return int 
+ */
 int s21_calculator_to_chart(char *input, double *result_double, char *x_value);
+/**
+ * @brief депозмитный калькулятор
+ * 
+ * @param input 
+ * @param output 
+ * @return int 
+ */
 int s21_deposit_calc(struct deposit_input input, struct deposit_output *output);
+/**
+ * @brief кредитный калькулятор
+ * 
+ * @param input 
+ * @param output 
+ */
 void s21_credit_calc(struct credit_input input, struct credit_output *output);
 
 // credit utils
